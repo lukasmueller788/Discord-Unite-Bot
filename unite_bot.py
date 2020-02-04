@@ -1,6 +1,6 @@
 import discord
 from discord.ext.commands import Bot
-from config import token
+import config
 
 client = discord.Client()
 
