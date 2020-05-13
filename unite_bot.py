@@ -1,6 +1,8 @@
 import discord
 from discord.ext.commands import Bot
 import config
+import pint
+import unite
 
 client = discord.Client()
 
@@ -15,7 +17,18 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    elif message.content == "!u":
+        return
+
+    elif message.content.startswith("!u"):
+
+        output = unite.convertInput(message.content)
+
+        #need abbreviated format for temperatures
+        if output.dimensionality == "[temperature]":
+            await message.channel.send("{:~P}".format(output))
+            
+        else:
+            await message.channel.send("{:P}".format(output))
 
 client.run(TOKEN)
