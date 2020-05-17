@@ -4,7 +4,7 @@ UniteBot uses the [Pint](https://pint.readthedocs.io/en/0.11/) Python library to
 At the moment, UniteBot is hosted locally on an older machine for the creator's personal use. Anyone who wishes to use it will have to host it themselves.
   
 # How to Use
-UniteBot's tag is '!u'.  
+UniteBot's tag is `!u`.  
 Ask UniteBot to convert something like this:  
 `!u [value] [unit1] to [unit2] (rounder)`  
 The rounder is optional and defaults to 2 decimal places.  
