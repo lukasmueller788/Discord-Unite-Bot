@@ -37,8 +37,8 @@ async def on_message(message):
         )
         embed.add_field(name="Unit Type", value="""\
         Angle
-        Length
-        Mass
+        Length/Distance
+        Mass/Weight
         Time
         Temperature
         Area
@@ -50,8 +50,8 @@ async def on_message(message):
         ...and more!""", inline=True)
         embed.add_field(name="Help Command", value="""\
         `!u h(elp) angle`
-        `!u h(elp) length`
-        `!u h(elp) mass`
+        `!u h(elp) length/distance`
+        `!u h(elp) mass/weight`
         `!u h(elp) time`
         `!u h(elp) temperature`
         `...you get the idea.`""", inline=True)
@@ -69,20 +69,20 @@ async def on_message(message):
             color = pink
         )
         await message.channel.send(embed=embed)
-    elif message.content == bot_tag + " help length" or message.content == bot_tag + " h length":
+    elif message.content == bot_tag + " help length" or message.content == bot_tag + " h length" or message.content == bot_tag + " help distance" or message.content == bot_tag + " h distance":
         embed = discord.Embed(
             title = "UniteBot Helper",
             description = """\
-            I can convert length measurements! 
+            I can convert length/distance measurements! 
             Example Input: ```!u 12 m to in 3```Output: ```472.441 inch```""",
             color = pink
         )
         await message.channel.send(embed=embed)
-    elif message.content == bot_tag + " help mass" or message.content == bot_tag + " h mass":
+    elif message.content == bot_tag + " help mass" or message.content == bot_tag + " h mass" or message.content == bot_tag + " help weight" or message.content == bot_tag + " h weight":
         embed = discord.Embed(
             title = "UniteBot Helper",
             description = """\
-            I can convert mass measurements! 
+            I can convert mass/weight measurements! 
             Example Input: ```!u 52 tons to kg 5```Output: ```47173.60648 kilogram```""",
             color = pink
         )
