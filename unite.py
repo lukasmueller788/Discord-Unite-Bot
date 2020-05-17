@@ -1,4 +1,5 @@
 from pint import UnitRegistry
+from textwrap import dedent
 
 default_rounder = 2
 ureg = UnitRegistry(autoconvert_offset_to_baseunit=True)
@@ -15,8 +16,11 @@ def convertInput(args):
     #if the last input string is a digit then we have a rounder, pop it from the list
     rounder = default_rounder if not args[len(args)-1].isdigit() else int(args.pop())
 
-    src = " ".join(args[0:args.index("to")]) #value + unit to convert
-    dst = " ".join(args[args.index("to")+1:]) #desired unit 
+    try:
+        src = " ".join(args[0:args.index("to")]) #value + unit to convert
+        dst = " ".join(args[args.index("to")+1:]) #desired unit
+    except:
+        return "Invalid command."
 
     #default rounding to two decimals, otherwise user-input rounder
     result = round(Q_(src).to(dst), rounder)
