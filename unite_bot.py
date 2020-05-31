@@ -12,7 +12,7 @@ bot_tag = "!u"
 client = Bot(command_prefix=bot_tag)
 client.remove_command("help")
 
-pink = discord.Color.from_rgb(255, 153, 204)
+pink = discord.Color.from_rgb(36, 133, 201)
 
 @client.event
 async def on_ready():
@@ -166,6 +166,7 @@ async def on_message(message):
             color = pink
         )
         embed.add_field(name = "Pint", value = hyperlink.parse("https://pint.readthedocs.io/en/0.11/"), inline=False)
+        embed.add_field(name = "Logo Artist: algooddevils", value = hyperlink.parse("https://twitter.com/algooddevils"), inline=False)
         await message.channel.send(embed=embed)
 
     elif message.content.startswith(bot_tag):
