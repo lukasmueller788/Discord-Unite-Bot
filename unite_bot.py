@@ -36,6 +36,7 @@ async def on_message(message):
             color = pink
         )
         embed.add_field(name="Unit Type", value="""\
+        Time Zone
         Angle
         Length/Distance
         Mass/Weight
@@ -49,6 +50,7 @@ async def on_message(message):
         Density
         ...and more!""", inline=True)
         embed.add_field(name="Help Command", value="""\
+        `!u h(elp) timezone`
         `!u h(elp) angle`
         `!u h(elp) length/distance`
         `!u h(elp) mass/weight`
@@ -59,7 +61,16 @@ async def on_message(message):
         embed.add_field(name="Sources", value="`!u sources`", inline=False)
 
         await message.channel.send(embed=embed)
-
+    elif message.content == bot_tag + " help timezone" or message.content == bot_tag + " h timezone":
+        embed = discord.Embed(
+            title = "UniteBot Helper",
+            description = """\
+            I can convert times to different time zones!
+            Example Input: ```!u 10:30 am est to pst```Output: ```7:30 AM```
+            If you don't include AM/PM, I will use 24 hour time.""",
+            color = pink
+        )
+        await message.channel.send(embed=embed)
     elif message.content == bot_tag + " help angle" or message.content == bot_tag + " h angle":
         embed = discord.Embed(
             title = "UniteBot Helper",
@@ -173,8 +184,11 @@ async def on_message(message):
 
         output = unite.convertInput(message.content)
 
+        #check if time zone conversion
+        if ':' in output:
+            await message.channel.send(output)
         #need abbreviated format for temperatures
-        if output.dimensionality == "[temperature]":
+        elif output.dimensionality == "[temperature]":
             await message.channel.send("{:~P}".format(output))
 
         else:
