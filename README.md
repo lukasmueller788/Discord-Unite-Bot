@@ -19,7 +19,8 @@ As stated before, a more comprehensive outline of the types of measurement suppo
 
 To get help from UniteBot, type:  
 `!u h(elp)`  
-This will return an embed outlining how to use the bot, a list of some of the unit types it supports, and how to get more specific help with each of those unit types. These unit types include:  
+This will return an embed outlining how to use the bot, a list of some of the unit types it supports, and how to get more specific help with each of those unit types. These unit types include:
+- Time Zones  
 - Angle
 - Length
 - Mass
