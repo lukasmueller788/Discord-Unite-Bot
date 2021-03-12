@@ -67,9 +67,64 @@ async def on_message(message):
             description = """\
             I can convert times to different time zones!
             Example Input: ```!u 10:30 am est to pst```Output: ```7:30 AM```
-            If you don't include AM/PM, I will use 24 hour time.""",
+            If you don't include AM/PM, I will use 24 hour time. There are some time zones that share abbreviations. Below are all of them listed, along with how to use them with me.""",
             color = pink
         )
+        embed.add_field(name="Time Zone Name", value="""\
+            Arabia Daylight Time (ADT)
+            Atlantic Daylight TIme (ADT)
+            Amazon Summer Time (AMST)
+            Armenia Summer Time (AMST)
+            Amazon Time (AMT)
+            Armenia Time (AMT)
+            Arabia Standard Time (AST)
+            Atlantic Standard Time (AST)
+            Bangladesh Standard Time (BST)
+            Bougainville Standard Time (BST)
+            British Summer Time (BST)
+            Central Daylight Time (CDT)
+            Cuba Daylight Time (CDT)
+            Central Standard Time (CST)
+            China Standard Time (CST)
+            Cuba Standard Time (CST)
+            Gulf Standard Time (GST)
+            South Georgia Time (GST)
+            India Standard Time (IST)
+            Irish Standard Time (IST)
+            Israel Standard Time (IST)
+            Paraguay Time (PYT)
+            Pyongyang Time (PYT)
+            West Samoa Time (WST)
+            Western Sahara Summer Time (WST)
+            """, inline=True)
+        embed.add_field(name="Abbreviation", value="""\
+            ADT-UTC+4
+            ADT-UTC-3
+            AMST-UTC-3
+            AMST-UTC+5
+            AMT-UTC-4
+            AMT-UTC+4
+            AST-UTC+3
+            AST-UTC-4
+            BST-UTC+6
+            BST-UTC+11
+            BST-UTC+1
+            CDT-UTC-5
+            CDT-UTC-4
+            CST-UTC-6
+            CST-UTC+8
+            CST-UTC-5
+            GST-UTC+4
+            GST-UTC-2
+            IST-UTC+5:30
+            IST-UTC+1
+            IST-UTC+2
+            PYT-UTC-4
+            PYT-UTC+8:30
+            WST-UTC+14
+            WST-UTC+1
+            """, inline=True)
+            
         await message.channel.send(embed=embed)
     elif message.content == bot_tag + " help angle" or message.content == bot_tag + " h angle":
         embed = discord.Embed(
@@ -176,8 +231,9 @@ async def on_message(message):
             description = "I primarily use the Pint Python unit conversion library to help you convert units. Links to this and more can be found below.",
             color = pink
         )
-        embed.add_field(name = "Pint", value = hyperlink.parse("https://pint.readthedocs.io/en/0.11/"), inline=False)
         embed.add_field(name = "Logo Artist: algooddevils", value = hyperlink.parse("https://twitter.com/algooddevils"), inline=False)
+        embed.add_field(name = "Pint", value = hyperlink.parse("https://pint.readthedocs.io/en/0.11/"), inline=False)
+        embed.add_field(name = "Time Zone Data", value = hyperlink.parse("https://www.timeanddate.com/time/zones/"), inline=False)
         await message.channel.send(embed=embed)
 
     elif message.content.startswith(bot_tag):

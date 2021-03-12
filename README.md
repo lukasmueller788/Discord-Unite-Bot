@@ -43,3 +43,4 @@ You can also type:
 `!u sources`  
 to return an embed with a list of sources used by UniteBot.  
 [Pint](https://pint.readthedocs.io/en/0.11/)  
+[Time Zone Data (timeanddate.com)](https://www.timeanddate.com/time/zones/)
