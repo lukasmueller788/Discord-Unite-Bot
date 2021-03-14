@@ -241,10 +241,13 @@ async def on_message(message):
         output = unite.convertInput(message.content)
 
         #check if time zone conversion
-        if ':' in output:
-            await message.channel.send(output)
+        try:
+            if ':' in output:
+                await message.channel.send(output)
+        except:
+            print("Not a time zone conversion.")
         #need abbreviated format for temperatures
-        elif output.dimensionality == "[temperature]":
+        if output.dimensionality == "[temperature]":
             await message.channel.send("{:~P}".format(output))
 
         else:
