@@ -1,4 +1,4 @@
-# Discord UniteBot
+# UniteBot for Discord
 ![logo embed](https://cdn.discordapp.com/attachments/667471154365071379/716789461748416512/logo_black_smaller.png)  
 Artist: [algooddevils](https://twitter.com/algooddevils) (Twitter)  
 UniteBot uses the [Pint](https://pint.readthedocs.io/en/0.11/) Python library to make unit conversions at the request of Discord users. It supports any unit type that Pint supports, although not all unit types will be described below. [Here](https://github.com/hgrecco/pint/blob/master/pint/default_en.txt) is a decent outline of the unit types supported by Pint.
