@@ -1,2 +1,7 @@
 config.py
 .vscode
+__pycache__
+logo
+.ipynb_checkpoints
+unite-key-pair.pem
+unite-key-pair.ppk
